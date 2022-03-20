@@ -1,2 +1,5 @@
 Задание*
 *.png
+
+*__pycache__
+*task_testdata
