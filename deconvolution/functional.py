@@ -116,7 +116,7 @@ class Conv(Func):
         self.kernel=np.array(kernel)
 
     def _getval(self, x):
-        return scipy.ndimage.convolve(x, weights=self.kernel, mode='constant')
+        return scipy.ndimage.convolve(x, weights=self.kernel, mode='nearest')
 
     def T(self):
         return Conv(np.flip(self.kernel))
