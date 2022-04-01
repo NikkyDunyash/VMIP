@@ -1,5 +1,7 @@
 Задание*
 *.png
+*.csv
+*.txt
 
 *__pycache__
 *task_testdata
