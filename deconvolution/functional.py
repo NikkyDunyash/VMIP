@@ -65,8 +65,8 @@ class Func:
 
 
 
-def grad(func: Func, x):
-    return func.grad(x)
+# def grad(func: Func, x):
+#     return func.grad(x)
     
 class Power(Func):
     def __init__(self, p):

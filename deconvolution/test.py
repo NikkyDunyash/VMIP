@@ -54,7 +54,7 @@ def main():
         output_image=255*normalize(output_image)
         output_image=np.array(np.repeat(output_image[ :, :, np.newaxis],
             repeats=3, axis=2), dtype=np.uint8)
-        io.imsave('blurred_image.png', output_image)
+        io.imsave(namespace.output_image, output_image)
 
 
 
