@@ -26,13 +26,13 @@ def main():
     kernel=np.array(io.imread(namespace.kernel), dtype=float)[:, :, 0]
     kernel/=np.sum(kernel)
 
-    N=500
+    N=200
     residual_norm=ResL1(A=Conv(kernel), b=input_image)
     directions=[[0 , 1], [1, 0], [1, 1], [1, -1]]
     alpha1, alpha2=(0.3, 0.01)
     func=residual_norm+alpha1*TV(directions) #+alpha2*TV2(directions)
-    optimizer=optim.GD(func, x0=np.zeros(input_image.shape), lr=0.1, 
-        momentum_factor=0.9)
+    optimizer=optim.GD(func, x0=np.zeros(input_image.shape), lr=1, 
+        momentum_factor=0.9, nesterov=False)
     scheduler=optim.ReduceLROnPlateau(optimizer, patience=1, verbose=True)
     start_time=time.perf_counter()
     for i in tqdm(range(N)):
