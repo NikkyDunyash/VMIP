@@ -1,9 +1,7 @@
 import types
-from matplotlib.pyplot import axis
 import numpy as np
 import scipy.ndimage
 
-# Simplified func: grad returns value
 
 class Func:
     def _getval(x):
