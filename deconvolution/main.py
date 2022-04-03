@@ -64,7 +64,7 @@ def main():
         momentum_factor=0.9, nesterov=True)
     scheduler=optim.ReduceLROnPlateau(optimizer, patience=1, verbose=True)
     # for i in tqdm(range(N)):
-    for k in range(N):
+    for i in range(N):
         scheduler.step()
     
     output_image=255*normalize(optimizer.x[ :, :, np.newaxis])
